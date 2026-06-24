@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #000;
+  color: #f3d77c;
+  line-height: 1.6;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "Tete Cooking";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(5rem, 12vw, 14rem);
+  color: rgba(255, 215, 0, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.18), transparent 30%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 920px;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: #ffd772;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: #fbd24f;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 0 24px rgba(255, 215, 0, 0.35);
+}
+
+.hero-copy {
+  margin: 1.8rem auto 2.5rem;
+  max-width: 720px;
+  color: #d6c88b;
+  font-size: 1.05rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #111;
+  background: linear-gradient(135deg, #ffd54f, #bf8b00);
+  text-decoration: none;
+  box-shadow: 0 24px 50px rgba(255, 181, 0, 0.2);
+}
+
+.panel {
+  padding: clamp(4rem, 6vw, 7rem) 1.5rem;
+  border-top: 1px solid rgba(255, 215, 0, 0.08);
+}
+
+.section-content {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #ffd676;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: #fff;
+}
+
+p {
+  margin: 0 0 1.25rem;
+}
+
+.product-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 2rem;
+}
+
+.product-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 28px;
+  background: rgba(255, 215, 0, 0.06);
+  border: 1px solid rgba(255, 215, 0, 0.18);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255, 215, 0, 0.18), transparent 40%);
+  pointer-events: none;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 32px 80px rgba(255, 203, 0, 0.15);
+}
+
+.product-card h3,
+.product-card p,
+.product-card .price {
+  position: relative;
+  z-index: 1;
+}
+
+.product-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #ffe58f;
+  font-size: 1.5rem;
+}
+
+.product-card p {
+  margin-bottom: 1.5rem;
+  color: #d1c18a;
+}
+
+.price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .hero-content {
+    padding: 2rem 1rem;
+  }
+
+  .product-card {
+    padding: 1.75rem;
+  }
+}
